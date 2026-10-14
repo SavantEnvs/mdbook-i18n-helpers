@@ -1,0 +1,7 @@
+project: savantenvs/mdbook-i18n-helpers
+target: normalize-mined-455a93b
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+cmds:
+  - cmd: /mayhem/normalize
+    libfuzzer: true

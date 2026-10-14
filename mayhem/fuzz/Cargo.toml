@@ -1,0 +1,23 @@
+[package]
+name = "mdbook-i18n-helpers-mayhem-fuzz"
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+[package.metadata]
+cargo-fuzz = true
+
+# Standalone crate: not a member of the upstream workspace, so upstream files stay untouched.
+[workspace]
+
+[dependencies]
+libfuzzer-sys = "0.4.12"
+mdbook-i18n-helpers = { path = "../../i18n-helpers" }
+polib = "0.3.0"
+
+[[bin]]
+name = "normalize"
+path = "fuzz_targets/normalize.rs"
+test = false
+doc = false
+bench = false
